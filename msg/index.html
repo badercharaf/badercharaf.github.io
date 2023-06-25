@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>كتب لبدر ميساج</title>
+    
+    <style>
+        
+        body {
+			margin: 0;
+			padding: 0;
+			background: #252530;
+			user-select: none;
+			width: 100vw;
+			height: 100vh;
+			background-size: cover;
+    background-position: center top;
+		background-image: url(https://files.catbox.moe/t79xth.jpg);
+		backdrop-filter: blur(0.5vw);
+		box-sizing: border-box;
+		}
+            	
+           #pageName {
+         padding: 0;
+         margin: 0;
+             width: 100vw;
+             height: 20vw;
+             color: white;
+             display: flex;
+		          align-items: center;
+             justify-content: center;
+             font-size: 6vw;
+             font-weight: bold;
+             box-sizing: border-box;
+             opacity: 0.6;
+            }
+         
+          #background {
+              margin: 0 5vw 20vw 5vw;
+              padding: 5vw;
+              background: rgba(0,0,0,0.5);
+              max-width: 100vw;
+              height: 80vw;
+              //border: 0.5vw solid #b7b3aa;
+              border-radius: 3vw;
+      box-shadow: 0 1vw 3vw rgba(0,0,0,0.4);
+              box-sizing: border-box;
+              
+             }
+          
+          #message {
+               width: 100%;
+               height: 50vw;
+               padding: 2vw 3vw 2vw 3vw;
+               color: rgba(255,255,255,0.7);
+     background-color: rgba(255,255,255,0.4);
+               border: 0;
+               border-radius: 2vw;
+               margin: 0;
+               font-size: 3vw;
+               direction: rtl;
+               box-sizing: border-box;
+              }
+           
+    #message::placeholder {
+    font-size: 3.5vw;
+  color: rgba(225,225,255,0.8);
+  }
+           
+              
+               #submit {
+               width: 100%;
+               height: 15vw;
+               background: #5985b4;
+               border-radius: 2vw;
+               border: 0;
+               color: #ffffff;
+               font-size: 5vw;
+               margin-top: 4vw;
+               box-sizing: border-box;
+               }
+               
+               #submit:active {
+                   
+                   filter:opacity(80%);
+                   }
+  
+               
+    </style>
+    
+</head>
+<body>
+    <p id="pageName"></p>
+    <div id="background">
+        
+    <textarea id="message" maxlength="200" placeholder="كتب ليا هنا" dir="auto"></textarea>
+    
+    <button id="submit" type="button">سيفط</button>
+    </div>
+    
+    
+    <script>
+        
+        document.getElementById('submit').onclick = function() {
+        
+
+var msg = document.getElementById('message').value;
+
+const url = `https://api.telegram.org/bot6295557437:AAE0aXh9J8bRFGXwaGaplK0cz180_UmExEk/sendMessage`;
+
+const data = new URLSearchParams();
+data.append('chat_id', '1391324027');
+data.append('text', msg);
+        
+        
+if (msg.length > 9) {
+
+if (msg.length < 201) {
+
+fetch(url, {
+  method: 'POST',
+  body: data,
+})
+  .then(response => {
+  
+  document.getElementById('message').value = '';
+  
+    alert(`لميساج تسيفط، شكرا`);
+
+  })
+  .catch(error => {
+    alert('وقع شي خطأ، عاود سيفط عفاك');
+  });
+        
+        } else {
+
+alert('ما تفوتش 200 حرف');
+
+}
+        } else {
+
+alert('تا كتب شي ميساج طويل أصاحبي'); 
+        
+        }
+      };
+        
+        
+        
+       
+  const sentence = "كتب ليا شي لعيبة سرية";
+  let index = 0;
+
+setTimeout(function() {
+
+  function displayCharacter() {
+    const element = document.getElementById("pageName");
+    element.textContent += sentence[index];
+    index++;
+    if (index >= sentence.length) {
+      clearInterval(intervalId);
+    }
+  }
+
+
+
+  const intervalId = setInterval(displayCharacter, 50);
+  
+}, 1000);
+
+        
+        
+        
+    </script>
+    
+</body>
+</html>
