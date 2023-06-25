@@ -1,1 +1,238 @@
-<p>Soon...</p>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bader Charaf</title>
+    <style>
+        
+        body {
+            
+            padding: 0;
+            margin: 0;
+            background-color: #252530;
+            user-select: none;
+        }
+    
+    #cover {
+        width: 100vw;
+        height: 50vw;
+        background-size: cover;
+        background-position: center;
+        background-color: #191919;
+        background-image: url(https://bcovate.github.io/src/logo-cover.jpg);
+    }
+    
+    #cover:active {
+        filter:opacity(70%);
+    }
+    
+    #square {
+        width: 30vw;
+        height: 30vw;
+        background-color: #191919;
+        background-size: cover;
+        background-position: center;
+        background-image: url(https://badercharaf.github.io/src/logo-square.jpg);
+        transform: translateY(-20vw)
+        translateX(5vw);
+        border-radius: 50%;
+        border: 0.5vw solid;
+        border-color: rgba(255, 255, 255, 0.8);
+        position: absolute;
+    }
+    
+    #square:active {
+        filter:opacity(70%);
+    }
+    
+    #name {
+        color: white;
+        font-size: 5vw;
+        margin: 0;
+        margin-left: 5vw;
+        margin-top: 18vw;
+        opacity: 0.85;
+    }
+    
+    #description {
+        font-size: 4vw;
+        color: white;
+        margin: 5vw;
+        opacity: 0.7;
+        text-align: center;
+        
+    }
+    
+    #description:active {
+      background: rgba(255,255,255,0.1);
+    }
+    
+    #buttonsContainer {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			width:100vw;
+			padding-top: 2vw;
+		}
+
+		#buttonsContainer div {
+			display: flex;
+			align-items: center;
+			background-color: #ffffff;
+			height: 10vw;
+			width:wrap;
+			margin: 1vw;
+			padding: 0;
+			text-decoration: none;
+			font-size: 3vw;
+			border-radius: 6vw;
+			margin-top: 0;
+			margin-bottom: 2vw;
+			filter: opacity(80%);
+		}
+		
+   
+  #buttonsContainer div:active {
+    filter: opacity(60%);
+}
+		
+
+
+		
+		#buttonsContainer img {
+			width: 8vw;
+			height: 8vw;
+			margin-right: 1vw;
+			margin-left: 2vw;
+			object-fit: cover;
+			filter: opacity(80%);
+		}
+		
+		#buttonsContainer span {
+			font-size: 3vw;
+			padding-right: 3vw;
+			color: #333333;
+			
+		}
+    
+    </style>
+</head>
+<body>
+
+    <div id="cover"></div>
+    <div id="square"></div>
+    <p id="name">BADER CHARAF (بدر شراف)</p>
+    <pre id="description"></pre>
+    <div id="buttonsContainer"></div>
+    
+    
+    <script>
+        var description = `.مطور تطبيقات والمواقع
+حساب رسمي تم شراؤه من جوميا`;
+
+
+document.getElementById("description").innerHTML = description;
+
+
+var src ='https://bcovate.github.io/';
+
+const lm = [{	
+"link":"https://www.facebook.com/charafbader",
+"icon":"fb",
+"alt": "facebook"
+},{	
+"link":"https://instagram.com/bader_charaf",
+"icon":"ig",
+"alt":"instagram"
+},{	
+"link":"https://twitter.com/bader__charaf",	
+"icon":"tw",
+"alt":"twitter"
+},{	
+"link":"https://snapchat.com/add/badrcharaf8",
+"icon": "sc",
+"alt":"snapchat"
+},{	
+"link":"https://tiktok.com/@badercharaf",	
+"icon":"tt",
+"alt":"tiktok"
+},{	
+"link":"https://github.com/badercharaf",
+"icon":"gh",
+"alt":"github"
+},{	
+"link": "https://t.me/badercharaf",	
+"icon":"tg",
+"alt":"telegram"
+},{/*
+"link":"https://discord.com/users/badercharaf",				"icon":"dc",
+"alt":"discord"
+},{	
+"link":"whatsapp://send/?phone=XXXXXXXXXX",
+"icon":"wa",
+"alt":"whatsapp"
+},{
+"link":"https://pinterest.fr/badercharaf",
+"icon":"pt",	
+"alt":"pinterest"	
+},{
+"link":"reddit.com/u/badercharaf",
+"icon":"rd",
+"alt":"reddit"
+},{
+"link":"https://www.linkedin.com/in/badercharaf",
+"icon":"li",
+"alt":"linkedin"
+},{
+"link":"https://mastodon.online/@badercharaf",
+"icon":"mtd",
+"alt":"mastodon"
+},{*/
+"link":"https://youtube.com/@badercharaf",
+"icon":"yt",
+"alt":"youtube"
+}];
+
+
+		
+
+  const buttonsContainer = document.getElementById('buttonsContainer');
+  
+		lm.forEach(item => {
+		
+			const button = document.createElement('div');
+			
+			button.href = item.link;
+
+			const imgElement = document.createElement('img');
+			
+var iconLink = src + "src/" + item.icon + ".png";
+
+			imgElement.src = iconLink;
+			
+			imgElement.alt = item.alt;
+			
+			button.appendChild(imgElement);
+			
+			const spanElement = document.createElement('span');
+			
+			spanElement.textContent = item.alt;
+			
+			button.appendChild(spanElement);
+
+	buttonsContainer.appendChild(button);
+	
+	button.addEventListener('click', () => {
+    window.open(item.link);
+  });
+	
+		});
+		
+</script>
+
+
+
+    </script>
+    
+    
+</body>
+</html>
