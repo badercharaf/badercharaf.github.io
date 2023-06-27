@@ -272,6 +272,12 @@ var iconLink = src + "src/" + item.icon + ".png";
     window.location.href = 'https://badercharaf.github.io/preview';
 });
 
+
+cover.addEventListener('click', () => {
+    var prvwLink = "https://bcovate.github.io/src/logo-cover.jpg";
+    localStorage.setItem('previewLink', prvwLink);
+    window.location.href = 'https://badercharaf.github.io/preview';
+});
   
 		
 		badge.addEventListener('click', () => {
