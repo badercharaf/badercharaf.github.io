@@ -1,12 +1,19 @@
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
     <title>Bader Charaf</title>
     <style>
         
+        @font-face {
+  font-family: font;
+  src: url(https://bcovate.github.io/src/font.ttf);
+}
+        
+        
         body {
             
-            padding: 0;
+            padding: 0 0 10vw 0;
             margin: 0;
             background-color: #252530;
             user-select: none;
@@ -44,14 +51,37 @@
         filter:opacity(70%);
     }
     
+    #nb {
+        padding: 0;
+        margin: 0;
+        margin-top: 18vw;
+        display: flex;
+        height: wrap;
+    }
+    
     #name {
         color: white;
         font-size: 5vw;
         margin: 0;
+        padding: 0;
         margin-left: 5vw;
-        margin-top: 18vw;
         opacity: 0.85;
+        font-family: font;
     }
+    
+    #badge {
+        width: 5vw;
+        height: 5vw;
+        margin: 1vw 0 0 2vw;
+        padding: 0;        
+        background-size: cover;
+        background-position: center;
+        background-image: url(https://bcovate.github.io/src/badge.png);
+    }
+    
+    #badge:active {
+    filter: opacity(60%);
+}
     
     #description {
         font-size: 4vw;
@@ -59,7 +89,7 @@
         margin: 5vw;
         opacity: 0.7;
         text-align: center;
-        
+        font-family: font;
     }
     
     #description:active {
@@ -94,8 +124,6 @@
   #buttonsContainer div:active {
     filter: opacity(60%);
 }
-		
-
 
 		
 		#buttonsContainer img {
@@ -111,7 +139,8 @@
 			font-size: 3vw;
 			padding-right: 3vw;
 			color: #333333;
-			
+			font-family: font;
+			opacity: 80%;
 		}
     
     </style>
@@ -120,7 +149,10 @@
 
     <div id="cover"></div>
     <div id="square"></div>
+     <div id="nb">
     <p id="name">BADER CHARAF (بدر شراف)</p>
+    <div id="badge"></div>
+    </div>
     <pre id="description"></pre>
     <div id="buttonsContainer"></div>
     
@@ -164,11 +196,15 @@ const lm = [{
 "link": "https://t.me/badercharaf",	
 "icon":"tg",
 "alt":"Telegram"
-},{/*
+},{
 "link":"https://discord.com/users/badercharaf",
 "icon":"dc",
 "alt":"Discord"
-},{	
+},{
+"link":"https://en.uptodown.com/developer/badercharaf",
+"icon":"utd",
+"alt":"Uptodown"
+},{	/*
 "link":"whatsapp://send/?phone=XXXXXXXXXX",
 "icon":"wa",
 "alt":"Whatsapp"
@@ -225,15 +261,25 @@ var iconLink = src + "src/" + item.icon + ".png";
 	
 	button.addEventListener('click', () => {
     window.open(item.link);
-  });
-	
+  });    
+  
 		});
 		
+		
+		square.addEventListener('click', () => {
+    var prvwLink = "https://badercharaf.github.io/src/logo-square.jpg";
+    localStorage.setItem('previewLink', prvwLink);
+    window.location.href = 'https://badercharaf.github.io/preview';
+});
+
+  
+		
+		badge.addEventListener('click', () => {
+    alert("تظهر هذه الشارة في الحسابات المؤكدة.");
+  });
+		
+		
 </script>
-
-
-
-    </script>
     
     
 </body>
