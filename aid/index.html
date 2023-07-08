@@ -1,7 +1,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Titre de la page</title>
+    <title>تنزيل التطبيق</title>
     
     <style>
         
@@ -40,7 +40,7 @@
             height: 178vw;
             background-size: cover;
             background-position: center;
-            background-image: url(https://badercharaf.github.io/phone.png);
+            background-image: url(https://badercharaf.github.io/aid/phone.png);
             transform: translateY(5vw);
             position: absolute;
             margin: 0;
@@ -72,7 +72,7 @@
             color: #fff;
             margin: 0;
             padding: 0;
-            margin-bottom: 10vw;
+            margin-bottom: 15vw;
             font-size: 3.7555vw;
         }
         
@@ -82,6 +82,15 @@
         
         #name:active {
             background: rgb(255,255,255,0.4);
+        }
+        
+        #downloads {
+            color: #aaffff;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 7vw;
+            font-size: 4vw;
+            opacity: 70%;
         }
         
         #download {
@@ -111,26 +120,67 @@
     <div id="linear1"></div>
     <div id="linear2"></div>
     <div id="linear3">
-    <pre id="info">Android +5
+    <pre id="info">Android: +5
     
-Version 1.0
+Version: 1.0
 
-Size 1.4 Mo
+Size: 1Mo
 
 
 "DESIGN & CODE & DEV by: <span id="name">Bader Charaf</span>"</pre>
+<p id="downloads">0</p>
     <p id="download">DOWNLOAD</p>
     </div>
     
     <script>
+        
+    var link ="https://counter-aid-default-rtdb.firebaseio.com/.json";
+        let CLICK = 0;
+        
+        fetch(link)
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("downloads").innerHTML = "Downloads: " + data.count;
+      })
+      .catch(error => {
+      });
+        
+        
    download.addEventListener('click', () => {
-    window.location.href = 'https://badercharaf.github.io/aid.apk';
+        
+        window.location.href = 'https://badercharaf.github.io/aid/aid.apk';
+        
+        if (CLICK == 0) {
+        
+    fetch(link)
+      .then(response => response.json())
+      .then(data => {
+        let count = data.count || 0;
+        
+        count += 1;
+        
+        fetch(link, {
+          method: "PUT",
+          body: JSON.stringify({ count: count })
+        })
+        .then(() => {
+          //updated
+          CLICK = 1;
+        })
+        .catch(error => {
+          //error updating
+        });
+      })
+      .catch(error => {
+        //error getting
+      });
+      }
 });
 
 document.getElementById('name').onclick = function() {
     window.open('https://badercharaf.github.io');
   };
-
+        
     </script>
     
     
