@@ -1,0 +1,138 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Titre de la page</title>
+    
+    <style>
+        
+       body {
+           margin: 0;
+           padding: 0;
+           background: #fafafa;
+           user-select: none;
+       }
+       
+       #toolbar {
+           background: #544548;
+           width: 100vw;
+           height: 15vw;
+           margin: 0;
+           padding: 0;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: rgb(255,255,255,0.8);
+           font-size: 5vw;
+       }
+        
+        #linear1 {
+            background: #5e4e50;
+            width: 100vw;
+            height: 70vw;
+            margin: 0;
+            padding: 0;
+          margin-bottom: 60vw;
+           border-radius: 0 0 20vw 20vw;
+        }
+        
+        #phone {
+            width: 100vw;
+            height: 178vw;
+            background-size: cover;
+            background-position: center;
+            background-image: url(https://badercharaf.github.io/phone.png);
+            transform: translateY(5vw);
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #linear2 {
+            background: #5e4e50;
+            width: 100vw;
+            height: 60vw;
+            margin: 0;
+            padding: 0;
+           border-radius: 20vw 20vw 0 0;
+        }
+        
+        #linear3 {
+            background: #5e4e50;
+            width: 100vw;
+            height: wrap;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        #info {
+            text-align: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10vw;
+            font-size: 3.7555vw;
+        }
+        
+        #name {
+            color: #eeee00
+        }
+        
+        #name:active {
+            background: rgb(255,255,255,0.4);
+        }
+        
+        #download {
+            width: 70vw;
+            height: 16vw;
+            background: #009eea;
+            margin: 0;
+            padding: 0;
+            display: flex;
+           align-items: center;
+           justify-content: center;
+           color: #fff;
+           border-radius: 8vw;
+           margin-bottom: 10vw;
+           font-size: 5vw;
+        }
+        
+        #download:active {
+            opacity: 0.8;
+        }
+    </style>
+    
+</head>
+<body>
+    <p id="toolbar">سيطرة الذكاء الإصطناعي</p>
+    <div id="phone"></div>
+    <div id="linear1"></div>
+    <div id="linear2"></div>
+    <div id="linear3">
+    <pre id="info">Android +5
+    
+Version 1.0
+
+Size 1.4 Mo
+
+
+"DESIGN & CODE & DEV by: <span id="name">Bader Charaf</span>"</pre>
+    <p id="download">DOWNLOAD</p>
+    </div>
+    
+    <script>
+   download.addEventListener('click', () => {
+    window.location.href = 'https://badercharaf.github.io/aid.apk';
+});
+
+document.getElementById('name').onclick = function() {
+    window.open('https://badercharaf.github.io');
+  };
+
+    </script>
+    
+    
+</body>
+</html>
