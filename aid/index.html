@@ -104,13 +104,32 @@
            justify-content: center;
            color: #fff;
            border-radius: 8vw;
-           margin-bottom: 10vw;
+           margin-bottom: 5vw;
            font-size: 5vw;
         }
         
         #download:active {
             opacity: 0.8;
         }
+        
+        #virustotal {
+            width: 40vw;
+            height: 10vw;
+            background-size: cover;
+            background-position: center;
+            background-image: url(https://badercharaf.github.io/aid/virustotal.png);
+        background-color: rgba(255,255,255,0.6);
+            margin: 0;
+            padding: 0;
+            margin-top: 5vw;
+            margin-bottom: 10vw;
+            border-radius: 1vw;
+        }
+        
+        #virustotal:active {
+            opacity: 0.8;
+        }
+        
     </style>
     
 </head>
@@ -130,6 +149,7 @@ Size: 1Mo
 "DESIGN & CODE & DEV by: <span id="name">Bader Charaf</span>"</pre>
 <p id="downloads">0</p>
     <p id="download">DOWNLOAD</p>
+    <div id="virustotal"></div>
     </div>
     
     <script>
@@ -180,6 +200,21 @@ Size: 1Mo
 document.getElementById('name').onclick = function() {
     window.open('https://badercharaf.github.io');
   };
+        
+        virustotal.addEventListener('click', () => {
+        
+  const alrt=`في موقع VirusTotal تم الإشارة إلى أن التطبيق يحتوي على:
+Trojan-Spy.AndroidOS.Agent
+
+من الطبيعي أن يظهر هذا التحذير لأن التطبيق يتصل بالخادم لإستقبال أجزاء القصة، ولا يتم إرسال أي شيء من التطبيق للخادم.
+قمنا بإرسال طلب للموقع للتأكد من عدم وجود Trojan في التطبيق.
+يمكنك الإنتظار إلى أن يتم إزالة التحذير، ثم نزل التطبيق.`;
+        
+   alert(alrt);
+   
+   window.open('https://www.virustotal.com/gui/file/c88d4b40b9829284eb3deb62fa263c61d9e359e4dfb42aef25d980c3c170ace9');
+  });
+        
         
     </script>
     
