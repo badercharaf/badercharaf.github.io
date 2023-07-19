@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Titre de la page</title>
+    
+    <style>
+        
+        body {
+            background: #28323c;
+            margin: 0;
+            padding: 0;
+            user-select:none;
+        }
+        
+        #toolbar {
+         display: flex;
+			    flex-wrap: wrap;
+			    align-items: center;
+			    justify-content: center;
+			    background: #37434f;
+			    width: 100%;
+			    height: 18vw;
+			    margin: 0 0 3vw 0;
+			    padding: 0;
+        }
+        
+        #appName {
+            flex-grow: 1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            font-size: 4vw;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        #logo {
+            width: 10vw;
+            height: 10vw;
+            margin: 0 4vw 0 0;
+            padding: 0;
+            background-image: url('https://files.catbox.moe/uy4tg0.png');
+            background-size: cover;
+        background-position: center;
+        }
+        
+        #list p {
+  color: rgba(255,255,255,0.7);
+  font-size: 5vw;
+  height: 15vw;
+  padding: 0 5vw 0 0;
+  margin: 0;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+#list p:active {
+    background: #37434f;
+}
+        
+    </style>
+</head>
+<body>
+    
+    <div id="toolbar">
+        <pre id="appName">سيطرة الذكاء الإصطناعي</pre>
+        <div id="logo"></div>
+    </div>
+    <div id="list"></div>
+    
+    
+    <script>
+        
+     
+var listDiv = document.getElementById('list');
+
+
+var url = 'https://raw.githubusercontent.com/badercharaf/BCAPPS/main/aid/aid.svg';
+
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+  
+    data.forEach(item => {
+    
+      var titleElement = document.createElement('p');
+      titleElement.textContent = item.title;
+
+titleElement.addEventListener('click', function() {
+localStorage.setItem('story', item.story);
+    window.location.href = 'https://badercharaf.github.io/aid/parts/read/';
+});
+
+      listDiv.appendChild(titleElement);
+    });
+  })
+  .catch(error => {
+    alert(error);
+  });
+        
+        
+    </script>
+</body>
+</html>
