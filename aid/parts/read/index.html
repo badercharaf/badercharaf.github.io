@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Titre de la page</title>
+    <style>
+        
+        body {
+            background: #28323c;
+            margin: 0;
+            padding: 0;
+            user-select:none;
+        }
+        
+        #story {
+            color: rgba(255,255,255,0.7);
+  font-size: 3.8vw;
+  padding: 5vw;
+  margin: 0;
+  text-align: right;
+  white-space: pre-wrap;
+        }
+        
+    </style>
+</head>
+<body>
+    <pre id="story"></pre>
+    
+    <script>
+        var previewLink = localStorage.getItem('story');
+        
+        document.getElementById("story").innerHTML = localStorage.getItem('story');
+    </script>
+</body>
+
+</html>
