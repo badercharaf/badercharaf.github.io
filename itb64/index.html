@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMG To Base64</title>
+    
+    <style>
+   body {
+       width: 100vw;
+       margin: 0;
+        padding: 0;
+        user-select: none;
+   }
+
+
+    #box {
+    margin: 0;  padding: 5vw;
+        background: url('content://com.android.providers.media.documents/document/image%3A85345');
+        width: 100vw;  height: wrap;
+        box-sizing: border-box;
+    }
+
+
+    #title {
+    width: 100%;
+    height: wrap;
+        margin: 0 0 5vw 0;
+        padding: 0;
+        color: rgba(255,255,255,0.8);
+        font-weight: bold;
+        text-align: center;
+        font-size: 8vw;
+    }
+    
+    #slct {
+        margin: 0;
+        padding: 5vw;
+        background: rgba(255,255,255,0.9);
+        text-align: center;
+        border-radius: 1vw;
+    }
+    
+    #slct:active {
+        opacity: 0.8;
+    }
+
+
+#fu {
+  position: absolute;
+  display: none;
+}
+
+#base64Image {
+    width: 80vw;
+    height: 80vw;
+    margin: 10vw;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2.5vw;
+    border: 0.3vw solid #cccccc;
+    background: #eeeeee;
+}
+
+#base64Text {
+    user-select: text;
+    box-sizing: border-box;
+    max-width: 80vw;
+    max-height: 10em;
+    overflow: auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0 10vw 10vw 10vw;
+    padding: 3vw 5vw 3vw 5vw;
+    font-size: 3vw;
+    border-radius: 2vw;
+    border: 0.3vw solid #cccccc;
+    background: #eeeeee;
+}
+        
+    </style>
+    
+</head>
+<body>
+    
+    <div id="box">
+    <p id="title">IMG to Base64</p>
+ 
+  <p id="slct">Select Image</p>
+  
+<input type="file" id="fu" accept="image/*"/>
+    </div>
+    
+    <p id="imgName"></p>
+   
+    <div id="base64Image"></div>
+    
+  
+    
+        <p id="base64Text">Bla Bla Bla Bla</p>
+
+    
+    
+    <script>
+  
+  
+  slct.addEventListener('click', () => {
+document.getElementById('fu').click();
+});
+
+
+const fu = document.getElementById("fu");
+
+
+    fu.addEventListener('change', () => {
+    
+    
+    
+    if (fu.files.length > 0) {
+    
+        
+        document.getElementById("imgName").textContent = fu.files[0].name;
+        
+        const base64Image = document.getElementById("base64Image");
+        
+        base64Image.style.backgroundImage = 'url(' + URL.createObjectURL(fu.files[0]) + ')';
+        
+            
+            
+            
+           
+            
+            const base64Text = document.getElementById("base64Text");
+            
+            const file = fu.files[0];
+            
+            if (file) {
+                const reader = new FileReader();
+                
+                reader.onload = function(event) {
+      const base64Data = event.target.result;
+      
+         
+         base64Text.textContent = base64Data;
+         
+         
+                };
+                
+                reader.readAsDataURL(file);
+                
+            }
+        
+
+
+    }
+});
+
+
+
+
+
+ 
+        
+    </script>
+</body>
+</html>
