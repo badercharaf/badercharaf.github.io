@@ -7,211 +7,140 @@
         
         @font-face {
   font-family: font;
-  src: url(https://bcovate.github.io/src/font.ttf);
+  src: url(https://files.catbox.moe/2kthgc.ttf);
 }
+            body {
+                
+                padding: 0;
+                margin: 0;
+                background-color: #252530;
+                user-select: none;
+                width: auto;
+                box-sizing: border-box;
+                background-image: url(https://files.catbox.moe/a0995d.jpg);
+                background-size: cover;
+                background-position: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #card {
+
+                max-width: 300px;
+                height: auto;
+                margin: 50px 0;
+                padding: 0;
+                border-radius: 15px;
+                background-color: rgba(0,0,0,0.2);
+                box-shadow: 0 0 20px 10px rgba(0,0,0,0.4);
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                backdrop-filter: blur(3px);
+            }
+
+
         
-        
-        body {
-            
-            padding: 0 0 10vw 0;
-            margin: 0;
-            background-color: #252530;
-            user-select: none;
-            box-sizing: border-box;
+        #picture {
+            width: 100px;
+            height: 100px;
+            margin: 30px auto 30px auto;
+            padding: 0;
+            background-color: #191919;
+            background-size: cover;
+            background-position: center;
+            background-image: url(https://badercharaf.github.io/src/logo-square.jpg);
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px rgba(0,0,0,0.2);
+            transition: border-radius 0.3s ease;
         }
-    
-    #cover {
-        width: 100vw;
-        height: 50vw;
-        background-size: cover;
-        background-position: center;
-        background-color: #191919;
-        background-image: url(https://bcovate.github.io/src/logo-cover.jpg);
-    }
-    
-    #cover:active {
-        filter:opacity(70%);
-    }
-    
-    #square {
-        width: 30vw;
-        height: 30vw;
-        background-color: #191919;
-        background-size: cover;
-        background-position: center;
-        background-image: url(https://badercharaf.github.io/src/logo-square.jpg);
-        transform: translateY(-20vw)
-        translateX(5vw);
-        border-radius: 50%;
-        border: 0.5vw solid;
-        border-color: rgba(255, 255, 255, 0.8);
-        position: absolute;
-    }
-    
-    #square:active {
-        filter:opacity(70%);
-    }
-    
-    #nb {
-        padding: 0;
-        margin: 0;
-        margin-top: 18vw;
-        display: flex;
-        height: wrap;
-    }
-    
-    #name {
-        color: white;
-        font-size: 5vw;
-        margin: 0;
-        padding: 0;
-        margin-left: 5vw;
-        opacity: 0.85;
-        font-family: font;
-    }
-    
-    #badge {
-        width: 5vw;
-        height: 5vw;
-        margin: 1vw 0 0 2vw;
-        padding: 0;        
-        background-size: cover;
-        background-position: center;
-        background-image: url(https://bcovate.github.io/src/badge.png);
-    }
-    
-    #badge:active {
-    filter: opacity(60%);
-}
-    
-    #description {
-        font-size: 4vw;
-        color: white;
-        margin: 5vw;
-        opacity: 0.7;
-        text-align: center;
-        font-family: font;
-    }
-    
-    #description:active {
-      background: rgba(255,255,255,0.1);
-    }
-    
-    
-    #message {
-    display: flex;
-    margin: 5vw;
-        padding: 0;
-        background: rgba(136,152,157,0.5);
+
+            #picture:active {
+
+            border-radius: 10px;
+
+            }
         
-        height: 10vw;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 2vw;
-    }
-    
-    #message:active {
-       opacity: 70%;
-    }
-    
-    #msgIcon {
-        width: 6vw;
-        height: 6vw;
-        margin: 0 2vw 0 0;
-        padding: 0;
-        background-size: cover;
-        background-position: center;
-        background-image: url(https://files.catbox.moe/z2dmo8.png);
-        opacity: 80%;
-    }
-    
-    #msgText {
-        color: white;
-        font-size: 5vw;
-        margin: 0 0 2vw 0;
-        padding: 0;
-        height: 5vw;
-        opacity: 80%;
-    }
-    
-    
-    
-    #buttonsContainer {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			width:100vw;
-			padding-top: 2vw;
-		}
+        
+        #name {
+            color: white;
+            font-size: 20px;
+            padding: 0;
+            margin: 0 auto;
+            opacity: 0.80;
+            font-family: font;
+            width: fit-content;
+        }
+        
+        #description {
+            font-size: 14px;
+            color: white;
+            margin: 25px 0 0 0;
+            padding: 0;
+            opacity: 0.7;
+            text-align: center;
+            font-family: font;
+            width: auto;
 
-		#buttonsContainer div {
-			display: flex;
-			align-items: center;
-			background-color: #ffffff;
-			height: 10vw;
-			width:wrap;
-			margin: 1vw;
-			padding: 0;
-			text-decoration: none;
-			font-size: 3vw;
-			border-radius: 6vw;
-			margin-top: 0;
-			margin-bottom: 2vw;
-			filter: opacity(80%);
-		}
-		
-   
-  #buttonsContainer div:active {
-    filter: opacity(60%);
-}
+        }
+        
+        
+        
+        #buttonsContainer {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                margin: auto 0;
+                padding: 30px 10px;
+                gap: 10px;
+                box-sizing: border-box;
+            }
 
-		
-		#buttonsContainer img {
-			width: 8vw;
-			height: 8vw;
-			margin-right: 1vw;
-			margin-left: 2vw;
-			object-fit: cover;
-			filter: opacity(80%);
-		}
-		
-		#buttonsContainer span {
-			font-size: 3vw;
-			padding-right: 3vw;
-			color: #333333;
-			font-family: font;
-			opacity: 80%;
-		}
+            
+            #buttonsContainer img {
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+                box-sizing: border-box;
+                background-color: rgba(255,255,255,1);
+                padding: 4px;
+                text-decoration: none;
+                border-radius: 50%;
+                opacity: 50%;
+                filter: invert(100%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+
+            #buttonsContainer img:active {
+        opacity: 0.6;
+        transform: rotate(-30deg);
+            }
     
     </style>
 </head>
 <body>
-
+    <div id="card">
     <div id="cover"></div>
-    <div id="square"></div>
-     <div id="nb">
-    <p id="name">BADER CHARAF (بدر شراف)</p>
-    <div id="badge"></div>
-    </div>
+    <div id="picture"></div>
+    <p id="name">BADER CHARAF</p>
     <pre id="description"></pre>
-    <div id="message">
-        <div id="msgIcon"></div>
-        <p id="msgText">Message</p>
-    </div>
     <div id="buttonsContainer"></div>
-    
+    </div>
     
     <script>
-        var description = `.مطور تطبيقات ومواقع الويب
-😅 ChatGPT أنا أمزح، أستخدم
-حساب رسمي تم شراؤه من جوميا`;
+        var description = `Apps/Web Developer
+Graphic/Web Designer
+Project Manager`;
 
 
 document.getElementById("description").innerHTML = description;
 
 
-var src ='https://bcovate.github.io/';
+var src ='https://raw.githubusercontent.com/bcovate/bcovate.github.io/main/';
 
 const lm = [{	
 "link":"https://www.facebook.com/charafbader",
@@ -249,7 +178,10 @@ const lm = [{
 "link":"https://en.uptodown.com/developer/badercharaf",
 "icon":"utd",
 "alt":"Uptodown"
-},{	/*
+},{
+"link":"https://youtube.com/@badercharaf",
+"icon":"ytb",
+"alt":"Youtube"	/*
 "link":"whatsapp://send/?phone=XXXXXXXXXX",
 "icon":"wa",
 "alt":"Whatsapp"
@@ -270,9 +202,6 @@ const lm = [{
 "icon":"mtd",
 "alt":"Mastodon"
 },{*/
-"link":"https://youtube.com/@badercharaf",
-"icon":"yt",
-"alt":"Youtube"
 }];
 
 
@@ -281,61 +210,28 @@ const lm = [{
   const buttonsContainer = document.getElementById('buttonsContainer');
   
 		lm.forEach(item => {
-		
-			const button = document.createElement('div');
-			
-			button.href = item.link;
 
 			const imgElement = document.createElement('img');
+
+            imgElement.href = item.link;
 			
-var iconLink = src + "src/" + item.icon + ".png";
+    var iconLink = src + "src/" + item.icon + ".png";
 
 			imgElement.src = iconLink;
 			
 			imgElement.alt = item.alt;
-			
-			button.appendChild(imgElement);
-			
-			const spanElement = document.createElement('span');
-			
-			spanElement.textContent = item.alt;
-			
-			button.appendChild(spanElement);
 
-	buttonsContainer.appendChild(button);
+	buttonsContainer.appendChild(imgElement);
 	
-	button.addEventListener('click', () => {
+	imgElement.addEventListener('click', () => {
     window.open(item.link);
-  });    
-  
-		});
-		
-		
-		square.addEventListener('click', () => {
-    var prvwLink = "https://badercharaf.github.io/src/logo-square.jpg";
-    localStorage.setItem('previewLink', prvwLink);
-    window.location.href = 'https://badercharaf.github.io/preview';
-});
-
-
-cover.addEventListener('click', () => {
-    var prvwLink = "https://bcovate.github.io/src/logo-cover.jpg";
-    localStorage.setItem('previewLink', prvwLink);
-    window.location.href = 'https://badercharaf.github.io/preview';
-});
-  
-		
-		badge.addEventListener('click', () => {
-    alert("تظهر هذه الشارة في الحسابات المؤكدة.");
   });
+		});
   
-  
-  message.addEventListener('click', () => {
-    window.location.href = 'https://badercharaf.github.io/msg';
-});
 		
 		
 </script>
+
     
     
 </body>
